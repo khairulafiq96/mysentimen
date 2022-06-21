@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import FacebookLoginButton from './FacebookLoginButton'
 
 
 class HomePage extends Component {
@@ -9,7 +10,7 @@ class HomePage extends Component {
                 <br></br>
                 <br></br>
                 <div className='homeTextSubHeader'>Look about their sentimen</div>
-                <div className='homeTextSubHeader'>Button</div>
+                <div className='homeTextSubHeader'><FacebookLoginButton></FacebookLoginButton></div>
                 <br></br>
                 <br></br>
                 <br></br>
