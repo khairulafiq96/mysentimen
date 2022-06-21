@@ -2,8 +2,10 @@ import React, {Component} from 'react'
 import {Switch,Route, withRouter} from 'react-router-dom'
 
 import HomePage from './HomePage';
+import Header from './Header';
 
 import {connect} from 'react-redux';
+import Footer from './Footer';
 
 
 
@@ -21,9 +23,15 @@ class App extends Component {
 
   pages(){
     return (
-       <Switch>
-        <Route exact path="/home" component={HomePage} />
-    </Switch>
+      <div>
+        <Header></Header>
+        <div className='homeBackground'>
+          <Switch>
+            <Route exact path="/home" component={HomePage} />
+          </Switch>
+        </div> 
+        <Footer></Footer>
+      </div>
     )
   }
 
