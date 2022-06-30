@@ -6,6 +6,8 @@ import Header from './Header';
 
 import {connect} from 'react-redux';
 import Footer from './Footer';
+import Charts from './Charts';
+import Politicians from './Politicians';
 
 
 
@@ -23,14 +25,16 @@ class App extends Component {
 
   pages(){
     return (
-      <div>
+      <div className='body-for-sticky'>
         <Header></Header>
         <div className='homeBackground'>
           <Switch>
-            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/home" component={HomePage}/>
+            <Route exact path="/charts" component={Charts}/>
+            <Route exact path="/politicians/:politician_id" component={Politicians}/>
           </Switch>
+          <Footer className="footer sticky-footer"></Footer>
         </div> 
-        <Footer></Footer>
       </div>
     )
   }
@@ -48,12 +52,13 @@ class App extends Component {
   }
 }
 
-function mapStateToProps() {
-  return { 
+function mapStateToProps({users}) {
+  return {
+    users
   }
 }
 
-export default withRouter(App)
+//export default withRouter(App)
 
 //WITH REDUX
-//export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(connect(mapStateToProps)(App));

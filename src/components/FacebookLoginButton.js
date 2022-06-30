@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
- 
+import {setSignedInUser} from '../actions/users'
+
+import {connect} from 'react-redux';
+import signedInUser from '../reducers/users';
 
 class FacebookLoginButton extends Component {
-    
+  
+  
+  state = {
+    signedInUser: null,
+    toHome : false
+  }
+
+
     initializeFacebookSdk() {
 
         /* Asynchronous flow: if the global 'FB' variable is still undefined,
@@ -25,7 +35,7 @@ class FacebookLoginButton extends Component {
         function initialize() {
           console.log("Running initialization")
           window.FB.init({
-            appId      : '',
+            appId      : '389161429703517',
             cookie     : true,
             xfbml      : true,
             version    : 'v3.2'
@@ -33,31 +43,64 @@ class FacebookLoginButton extends Component {
         }
       }
 
+      fbLogoutUser() {
+        console.log('running fbLogoutUser')
+        window.FB.getLoginStatus(function(response) {
+            if (response && response.status === 'connected') {
+                window.FB.logout(function(response) {
+                    //document.location.reload();
+                    console.log(response)
+                }
+                );
+            }
+        });
+      }
 
-    render(){
-
+      
+    render( ){
         const responseFacebook = (response) => {
-            console.log(response);
-          }
+            
+            //this.checkSignedInUser()
 
-          const componentClicked = (response) => {
-            console.log(response);
+            if (response){
+              //console.log(response);
+              this.props.dispatch(setSignedInUser(response))
+
+            } else {
+              console.log('user is not signed in')
+            }
+
+
           }
+          
+        const {user} = this.props
 
         return (
             <div>
-                {this.initializeFacebookSdk()}
+
+            
+              {this.initializeFacebookSdk()}
                 <FacebookLogin
-                    appId=""
-                    autoLoad={true}
-                    fields="name,email,picture"
-                    onClick={componentClicked}
-                    callback={responseFacebook} />
-                
-                <br></br>
+                     appId="389161429703517"
+                     autoLoad={true}
+                     fields="name,email,picture"
+                     callback={responseFacebook}
+                     cssClass="btn-grad_facebook"/>
+              
+              
+                  <button onClick={this.fbLogoutUser}> Logout</button>         
             </div>
         )
     }
 }
 
-export default FacebookLoginButton
+
+function mapStateToProps({users}) {
+  return {
+    users
+  }
+}
+
+
+//export default FacebookLoginButton
+export default connect(mapStateToProps)(FacebookLoginButton);

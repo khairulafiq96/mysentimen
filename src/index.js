@@ -7,30 +7,29 @@ import App from './components/App';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-//import { createStore } from "redux";
+import { createStore } from "redux";
 import { Provider } from "react-redux";
-//import reducer from "./reducers";
-//import middleware from './middleware';
+import reducer from "./reducers";
+import middleware from './middleware';
 
+const store = createStore(reducer,middleware)
 
-//const store = createStore(reducer,middleware)
-
-ReactDOM.render(
+/*ReactDOM.render(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
   document.getElementById('root'),
-);
+); */
 
 //WITH REDUX
-/*ReactDOM.render(
+ReactDOM.render(
   <BrowserRouter>
   <Provider store={store}>
     <App />
   </Provider>
   </BrowserRouter>,
   document.getElementById('root'),
-); */
+);
 
 
 // If you want to start measuring performance in your app, pass a function

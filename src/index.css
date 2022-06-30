@@ -1,5 +1,27 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Varela+Round');
+
+html {
+  height: 100%;              /* for the page to take full window height */
+  box-sizing: border-box;    /* to have the footer displayed at the bottom of the page without scrolling */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;       /* enable the "border-box effect" everywhere */
+}
+
+.body-for-sticky {
+  position: relative;        /* for the footer to move with the page size */
+  min-height: 100%;          /* for the footer to be at the bottom */
+  padding-bottom: 6rem;      /* Space available between last element and bottom border of the page */
+}
+
+.sticky-footer {
+  position: absolute;        /* for it to disappear under last body element */
+  bottom: 0;                 /* so the footer can stick to the bottom*/
+}
 
 body {
   margin: 0;
@@ -47,6 +69,8 @@ code {
 .headerText{
   font-size: 24px;
   font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-decoration: none !important;
 }
 
 .loginButtonPosition{
@@ -81,9 +105,14 @@ code {
 }
 
 .homeBackground{
-  background-color: rgb(237, 237, 237);
+  background-color: linear-gradient(rgb(248, 250, 253) 0%, rgba(248, 250, 253, 0) 413px);
+  
   height: 85vh;
   width: 100%;
+}
+
+.homePreventOverlap{
+  min-height: 800px;
 }
 
 .homeTextHeader{
@@ -99,3 +128,170 @@ code {
   font-size: 36px;
   font-family: 'Raleway', sans-serif;
 }
+
+.centerButton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+                
+         
+.btn-grad_facebook {
+  font-family: 'Varela Round', sans-serif;
+  background-image: linear-gradient(to right, #314975 0%, #436196  51%, #2c4471  100%);
+  margin: 10px;
+  padding:20px 90px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 50px;
+  display: block;
+  border: none;
+}
+
+.btn-grad_facebook:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+         
+.btn-grad_header_login {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 14px;
+  background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
+  padding: 9px 40px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+}
+
+.btn-grad_header_login:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+         
+.btn-grad_mysentimen_chart {
+  font-size: 22px;
+  font-family: 'Varela Round', sans-serif;
+  background-image: linear-gradient(to right, #136a8a 0%, #267871  51%, #136a8a  100%);
+  margin: 10px;
+  padding: 15px 65px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white !important;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-grad_mysentimen_chart:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Chart Component */
+
+.chartPadding{
+  padding-top: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+
+}
+  
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+td {
+  padding-bottom: 20px;
+  padding-top:20px;
+  padding-right: 15px;
+  
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+  border-spacing: none;
+}
+
+table tr:hover {
+  background-color: rgb(236, 236, 236);
+}
+
+table tr td small {
+  opacity: 0.1;
+}
+
+table tr:hover td small {
+  opacity: 0.2;
+}
+
+.pageCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/*Politicians Page*/
+/* Politician Card */
+
+.politicianCard {
+  border: solid 1px rgb(210, 210, 210);
+  width: 400px;
+  border-radius: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.politicianCard_padding{
+  padding: 30px;
+}
+
+.politicianCard_name {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.politicianCard_subtext{
+  font-size: 17px;
+}
+
+.politicianCard_subtextPadding{
+  padding-top: 10px;
+}
+
+
+
+
+
