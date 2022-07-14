@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
-import { handleLeaderboard } from '../actions';
+import { handleLeaderboard, handlePoliticianScore } from '../actions';
 import Politicians_card from './Politicians_card';
 import Votes_live from './Votes_live';
 import { handleLiveVotes } from '../actions';
@@ -19,6 +19,11 @@ class Politicians extends Component {
         await Promise.all([
             this.props.dispatch(handleLeaderboard()),
             this.props.dispatch(handleLiveVotes(politician_id))])
+
+            //function below will changed to politician to update the sentimen
+            //Please complete after finish updating the leaderboard sentimen
+            //this.props.dispatch(handlePoliticianScore(politician_id))])
+            
         //if(!this.props.politicians){
         //   await this.props.dispatch(handleLeaderboard())
         //}
@@ -45,9 +50,10 @@ class Politicians extends Component {
                     <div className='Display-Name'><Politicians_card politicianDetail={politicians[politician_id]}></Politicians_card></div>
                     {votes ?<div className="Live-Comments liveCommentCard"> <Votes_live liveVote={votes}></Votes_live> </div>: <p>Loading</p>}
                     </div>
+                    
                 : <p>Loading</p>}
-                <div className='comment_Location'> <Votes_add></Votes_add></div>
-
+                
+                <div className='comment_Location'> <Votes_add politicianId={politician_id}></Votes_add></div>
             </div>
         )
     }

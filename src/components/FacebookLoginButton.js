@@ -47,7 +47,7 @@ class FacebookLoginButton extends Component {
 
     render( ){
 
-        const {user} = this.props
+        const {user, buttonTheme} = this.props
 
         const responseFacebook = async (response) => {
             //this.checkSignedInUser()
@@ -63,48 +63,25 @@ class FacebookLoginButton extends Component {
             }
           }
 
-          const fbLogoutUser = (e)=> {
-            e.preventDefault()
-            console.log('running fbLogoutUser')
-            window.FB.getLoginStatus((response)=> {
-                if (response && response.status === 'connected') {
-                    window.FB.logout((response)=>{
-                        //document.location.reload();
-                        //console.log(response.status)
-                        this.props.dispatch(setLogoutUser())
-                        
-                    }
-                    );
-                }
-            });
-          }
-
-           
-        
-
         return (
             <div>
-
-            
               {this.initializeFacebookSdk()}
-                <FacebookLogin
-                     appId="389161429703517"
-                     autoLoad={false}
-                     fields="name,email,picture"
-                     callback={responseFacebook}
-                     cssClass="btn-grad_facebook"/>
-              
-              
-                  <button className='btn-grad_facebook' onClick={(e) => fbLogoutUser(e) }> Logout</button>         
+              <FacebookLogin
+                      appId="389161429703517"
+                      autoLoad={false}
+                      fields="name,email,picture"
+                      callback={responseFacebook}
+                      cssClass={buttonTheme}/>
+                               
             </div>
         )
     }
 }
 
 
-function mapStateToProps({users}) {
+function mapStateToProps({user}) {
   return {
-    users
+    user
   }
 }
 

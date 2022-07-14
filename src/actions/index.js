@@ -1,7 +1,7 @@
 import { setSignedInUser, verifyUser } from "./users";
-import { getLeaderboard } from "./politicians";
+import { getLeaderboard, getPoliticianScore } from "./politicians";
 import * as API from '../utils/api'
-import { getLiveVotes, clearLiveVotes } from "./votes";
+import { getLiveVotes, clearLiveVotes, postVotes } from "./votes";
 
 export function handleSignInUser(user){
     return (dispatch)=> {
@@ -32,6 +32,14 @@ export function handleLiveVotes(politicianid){
     }
 }
 
+export function handlePoliticianScore(politicianid){
+    return (dispatch)=>{
+        return API.getPoliticianScoreAPI(politicianid).then((sentimen)=>{
+            dispatch(getPoliticianScore(sentimen))
+        })
+    }
+}
+
 
 export function handleClearVotes(votes){
     return (dispatch) => {
@@ -39,3 +47,11 @@ export function handleClearVotes(votes){
     }
 }
 
+export function handlePostVotes(votes){
+    return (dispatch) =>{
+        return API.postVotesAPI(votes).then((voteresponse)=>{
+            dispatch(postVotes(voteresponse))
+            //handleLiveVotes(votes['politicianid'])
+        })
+    }
+}

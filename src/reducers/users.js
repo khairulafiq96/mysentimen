@@ -13,9 +13,8 @@ export default function user(state = null, action) {
                 }
       
       case SIGN_OUT_USER:
-        return {
-                ...action.user = null
-                }
+        return action.user = null
+                
   
       default:
         return state;

@@ -61,7 +61,6 @@ export function getLiveVotesAPI(politicianid){
     }
   }
 
-
   return fetch(url+'/liveVotes', liveVotesRequest ).then(function(res) {
       //console.log(res)
       return res.json();
@@ -71,4 +70,55 @@ export function getLiveVotesAPI(politicianid){
       return resJson;
      })
 }
+
+export function getPoliticianScoreAPI(politicianid){
+  var obj = {  
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    //HAD to JSON stringify because the body datatype is Object and the API could not process any Object item
+    body: JSON.stringify({
+      'politicianid' : politicianid,
+    }) 
+  }
+  return fetch(url+'/politicianScore', obj).then(function(res) {
+      //console.log(res)
+      return res.json();
+      })
+      .then(function(resJson) {
+      //console.log(resJson)
+      return resJson;
+})
+}
+
+
+//Post votes API
+export function postVotesAPI(votes){
+
+  var obj = {  
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              //HAD to JSON stringify because the body datatype is Object and the API could not process any Object item
+              body: JSON.stringify({
+                'comments' : votes['comments'],
+                'politicianid' : votes['politicianid'],
+                'userid' : votes['userid'],
+                'sentimen' : votes['sentimen'],
+                
+              }) 
+            }
+    return fetch(url+'/postVotes', obj).then(function(res) {
+        //console.log(res)
+        return res.json();
+       })
+      .then(function(resJson) {
+        //console.log(resJson)
+        return resJson;
+       })
+  }
 

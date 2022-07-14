@@ -18,7 +18,7 @@ class Politicians_card extends Component {
                     <div className='politicianCard_subtext politicianCard_subtextPadding'>
                         <div>{politicianDetail['position']}</div>
                         <div>{politicianDetail['party']}</div>
-
+                        <div>{politicianDetail['sentimen']}</div>
                     </div>
                 
                 </div>
