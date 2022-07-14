@@ -47,7 +47,7 @@ class Politicians extends Component {
             <div className='pageCenter'>
                 {politicians ?
                     <div className='politician_container'>
-                    <div className='Display-Name'><Politicians_card politicianDetail={politicians[politician_id]}></Politicians_card></div>
+                    <div className='Display-Name'><Politicians_card politicianId={politician_id} politicianDetail={politicians[politician_id]}></Politicians_card></div>
                     {votes ?<div className="Live-Comments liveCommentCard"> <Votes_live liveVote={votes}></Votes_live> </div>: <p>Loading</p>}
                     </div>
                     

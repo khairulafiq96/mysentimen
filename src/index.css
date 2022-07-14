@@ -382,26 +382,61 @@ table tr:hover td small {
 
 .politicianCard {
   border: solid 1px rgb(210, 210, 210);
-  width: 470px;
+  min-width: 630px;
   border-radius: 20px;
   font-family: 'Raleway', sans-serif;
+  
+  
+  
 }
 
 .politicianCard_padding{
   padding: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .politicianCard_name {
   font-weight: bold;
   font-size: 24px;
+  width: 400px;
+  
 }
 
 .politicianCard_subtext{
   font-size: 17px;
+  width: 350px;
 }
 
 .politicianCard_subtextPadding{
   padding-top: 10px;
+
+}
+
+.politicianCard_picture{
+  width: 70px;
+  height: 95px;
+  border-radius: 20%;
+  
+}
+
+.politicianCard_picturePosition{
+  float: left;
+  align-items: center;
+}
+
+.politicianDetailInline{
+  float: right;
+  padding-left: 20px;
+}
+
+.politcianCard_SentimenText{
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.politicianSentimenPadding{
+  
 }
 
 /* Live Comments */

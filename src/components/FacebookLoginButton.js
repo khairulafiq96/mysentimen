@@ -51,7 +51,8 @@ class FacebookLoginButton extends Component {
 
         const responseFacebook = async (response) => {
             //this.checkSignedInUser()
-            if (response){
+            //console.log(response)
+            if (response && response['status'] !== 'unknown' ){
               //console.log(response);
               //Change to handleSignUser
               await Promise.all([ 
