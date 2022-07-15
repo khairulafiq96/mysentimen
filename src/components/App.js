@@ -29,7 +29,7 @@ class App extends Component {
         <Header></Header>
         <div className='homeBackground'>
           <Switch>
-            <Route exact path="/home" component={HomePage}/>
+            <Route exact path={["/","/home"]} component={HomePage}/>
             <Route exact path="/charts" component={Charts}/>
             <Route exact path="/politicians/:politician_id" component={Politicians}/>
           </Switch>

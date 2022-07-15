@@ -6,6 +6,7 @@ import Votes_live from './Votes_live';
 import { handleLiveVotes } from '../actions';
 import { clearLiveVotes } from '../actions/votes';
 import Votes_add from './Votes_add';
+import Politicians_LiveChart from './Politicians_LiveChart';
 
 
 class Politicians extends Component {
@@ -48,6 +49,7 @@ class Politicians extends Component {
                 {politicians ?
                     <div className='politician_container'>
                     <div className='Display-Name'><Politicians_card politicianId={politician_id} politicianDetail={politicians[politician_id]}></Politicians_card></div>
+                    <Politicians_LiveChart></Politicians_LiveChart>
                     {votes ?<div className="Live-Comments liveCommentCard"> <Votes_live liveVote={votes}></Votes_live> </div>: <p>Loading</p>}
                     </div>
                     

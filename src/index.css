@@ -175,6 +175,27 @@ code {
   border: none;
 }
 
+.btn-grad_facebook_header {
+  font-family: 'Varela Round', sans-serif;
+  background-image: linear-gradient(to right, #314975 0%, #436196  51%, #2c4471  100%);
+  padding:10px 20px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 50px;
+  display: block;
+  border: none;
+}
+
+.btn-grad_facebook_header:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
                 
          
@@ -223,22 +244,22 @@ code {
   cursor: pointer;
 }
          
-.btn-grad_header_login {
+.btn-grad_home_Leaders {
+  font-size: 20px;
   font-family: 'Varela Round', sans-serif;
-  font-size: 14px;
   background-image: linear-gradient(to right, #fc00ff 0%, #00dbde  51%, #fc00ff  100%);
   padding: 9px 40px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white !important;            
   box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  border-radius: 50px;
   display: block;
   border: none;
 }
 
-.btn-grad_header_login:hover {
+.btn-grad_home_Leaders:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
@@ -248,7 +269,6 @@ code {
 
          
 .btn-grad_mysentimen_chart {
-  font-size: 22px;
   font-family: 'Varela Round', sans-serif;
   background-image: linear-gradient(to right, #136a8a 0%, #267871  51%, #136a8a  100%);
   margin: 10px;
@@ -262,6 +282,7 @@ code {
   display: block;
   border: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .btn-grad_mysentimen_chart:hover {
@@ -640,6 +661,22 @@ textarea:focus{
   border: none;
 }
 
+
+/* Live Chart Component */
+
+.liveChart_Border {
+  border: solid 1px lightgray;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+.liveChart_flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 

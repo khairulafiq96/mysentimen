@@ -8,19 +8,17 @@ class Header extends Component {
     render(){
 
         const {user} = this.props
-        const buttonTheme = "btn-grad_header_login";
+        const buttonTheme = "btn-grad_facebook_header";
 
         return(
             <div className='headerBorder headerText headerPadding'>
-                <NavLink exact to='/home' className='headerInline headerMenu'>
+                <NavLink exact to='/' className='headerInline headerMenu'>
                     MySentimen (Alpha)
                 </NavLink>
                 <NavLink exact to='/charts' className='headerInline headerMenu'>
-                    Charts
-                </NavLink>
-                <div className='headerInline headerMenu'>
                     Leaders
-                </div>
+                </NavLink>
+                
                 
                 {user ?
                     <div className='loginButtonPosition'>
