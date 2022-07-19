@@ -8,6 +8,9 @@ import {connect} from 'react-redux';
 import Footer from './Footer';
 import Charts from './Charts';
 import Politicians from './Politicians';
+import User_profileSetting from './User_profileSetting';
+import PrivacyPolicy from './PrivacyPolicy';
+import Guide_AccountDeletion from './Guide_AccountDeletion';
 
 
 
@@ -32,6 +35,9 @@ class App extends Component {
             <Route exact path={["/","/home"]} component={HomePage}/>
             <Route exact path="/charts" component={Charts}/>
             <Route exact path="/politicians/:politician_id" component={Politicians}/>
+            <Route exact path="/settings" component={User_profileSetting}/>
+            <Route exact path="/privacy" component={PrivacyPolicy}/>
+            <Route exact path="/deletionGuide" component={Guide_AccountDeletion}/>
           </Switch>
           <Footer className="footer sticky-footer"></Footer>
         </div> 

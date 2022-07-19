@@ -123,3 +123,27 @@ export function postVotesAPI(votes){
        })
   }
 
+
+//Delete User DB
+export function deleteUserAPI(user){
+
+  var obj = {  
+              method: 'DELETE',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              //HAD to JSON stringify because the body datatype is Object and the API could not process any Object item
+              body: JSON.stringify({
+                'userID' : user['userID']
+              }) 
+            }
+    return fetch(url+'/deleteUserDB', obj).then(function(res) {
+        //console.log(res)
+        return res.json();
+       })
+      .then(function(resJson) {
+        //console.log(resJson)
+        return resJson;
+       })
+  }

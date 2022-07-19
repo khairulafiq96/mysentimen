@@ -1,4 +1,4 @@
-import { SET_SIGNED_IN_USER, SIGN_OUT_USER, VERIFY_USER } from "../actions/users";
+import { SET_SIGNED_IN_USER, SIGN_OUT_USER, VERIFY_USER, DELETE_USER } from "../actions/users";
 
 export default function user(state = null, action) {
     switch (action.type) {
@@ -13,6 +13,10 @@ export default function user(state = null, action) {
                 }
       
       case SIGN_OUT_USER:
+        return action.user = null
+
+      
+      case DELETE_USER:
         return action.user = null
                 
   

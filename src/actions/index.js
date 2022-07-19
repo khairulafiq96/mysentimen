@@ -1,4 +1,4 @@
-import { setSignedInUser, verifyUser } from "./users";
+import { setDeleteUser, setSignedInUser, verifyUser } from "./users";
 import { getLeaderboard, getPoliticianScore } from "./politicians";
 import * as API from '../utils/api'
 import { getLiveVotes, clearLiveVotes, postVotes } from "./votes";
@@ -10,6 +10,16 @@ export function handleSignInUser(user){
         })
     }
 }
+
+export function handleDeleteUser(user){
+    return (dispatch) => {
+        return API.deleteUserAPI(user).then((currentuser)=>{
+            console.log("Running handle delete user")
+            dispatch(setDeleteUser(user))
+        })
+    }
+}
+
 
 //Charts Page, Leaderboard
 export function handleLeaderboard(){
