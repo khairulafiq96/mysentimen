@@ -1,14 +1,18 @@
 import React, {Component} from 'react'
+import {NavLink} from 'react-router-dom'
 
 class Footer extends Component {
     render(){
         return(
             <div className='footerPosition footerPadding'>
                <div className='footerMenuItems'>
-                    <a target="_blank" href='https://github.com/khairulafiq96/mysentimen/blob/DEV/privacypolicy/MySentimen_PRIVACY_POLICY.pdf'>Privacy Notice</a>
+                    <NavLink exact to="/privacy">Privacy Notice</NavLink>
                </div>
                <div className='footerMenuItems'>
                     <a href="https://github.com/khairulafiq96/mysentimen" target="_blank">Contribute Now</a>
+               </div>
+               <div className='footerMenuItems'>
+                    <NavLink exact to="/deletionGuide">Account Deletion Guide</NavLink>
                </div>
 
             </div>

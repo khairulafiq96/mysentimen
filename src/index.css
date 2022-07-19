@@ -686,6 +686,22 @@ textarea:focus{
   
 }
 
+/*Privacy Notice */
+.contentMargin{
+  font-family: 'Raleway', sans-serif;
+  padding-left: 200px;
+  width: 80%;
+}
+
+.pageSize{
+  height: 750px;
+   white-space: nowrap;
+}
+
+.imageReduceSize{
+  width: 40%;
+}
+
 
 
 
