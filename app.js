@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === "production"){
     app.use(express.static('public'));
     app.get('*',(req, res)=>{
         //req.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-        res.sendFile('index.html', { root: __dirname })
+        res.sendFile('src/index.html', { root: __dirname })
     })
 }
 
