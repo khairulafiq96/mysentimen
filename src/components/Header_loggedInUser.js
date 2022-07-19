@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import FacebookLogOutButton from "./FacebookLogOutButton";
+import FacebookDeleteAccountButton from './FacebookDeleteAccountButton'
+import {NavLink} from 'react-router-dom'
 
 class Header_loggedInUser extends Component {
 
@@ -12,9 +14,9 @@ class Header_loggedInUser extends Component {
         return(
             <div className="signedInUser_noOverlap">
                 <img className="signedInUser_Picture" src={signedInUser['picture']['data']['url']}></img>
-                <div className="signedInUser_inline signedInUser_Name">{signedInUser['name']}</div>
+                <div className="signedInUser_inline signedInUser_Name">
+                    <NavLink exact to='/settings'>{signedInUser['name']}</NavLink></div>
                 <div><FacebookLogOutButton></FacebookLogOutButton></div>
-                
             </div>
         )
     }

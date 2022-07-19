@@ -678,6 +678,14 @@ textarea:focus{
   align-items: center;
 }
 
+/* User Settings  */
+.settingsSubText {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  
+}
+
 
 
 

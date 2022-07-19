@@ -5,10 +5,10 @@ class Footer extends Component {
         return(
             <div className='footerPosition footerPadding'>
                <div className='footerMenuItems'>
-                    Privacy Notice
+                    <a target="_blank" href='https://github.com/khairulafiq96/mysentimen/blob/DEV/privacypolicy/MySentimen_PRIVACY_POLICY.pdf'>Privacy Notice</a>
                </div>
                <div className='footerMenuItems'>
-                    Contribute Now
+                    <a href="https://github.com/khairulafiq96/mysentimen" target="_blank">Contribute Now</a>
                </div>
 
             </div>
