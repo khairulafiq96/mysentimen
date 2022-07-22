@@ -36,7 +36,7 @@ class FacebookLoginButton extends Component {
         function initialize() {
           console.log("Running initialization")
           window.FB.init({
-            appId      : '389161429703517',
+            appId      : '1019842082001936',
             cookie     : true,
             xfbml      : true,
             version    : 'v3.2'
@@ -68,7 +68,7 @@ class FacebookLoginButton extends Component {
             <div>
               {this.initializeFacebookSdk()}
               <FacebookLogin
-                      appId="389161429703517"
+                      appId="1019842082001936"
                       autoLoad={false}
                       fields="name,email,picture"
                       callback={responseFacebook}
