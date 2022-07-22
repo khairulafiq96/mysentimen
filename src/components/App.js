@@ -11,6 +11,7 @@ import Politicians from './Politicians';
 import User_profileSetting from './User_profileSetting';
 import PrivacyPolicy from './PrivacyPolicy';
 import Guide_AccountDeletion from './Guide_AccountDeletion';
+import HomePage_Popup from './HomePage_Popup';
 
 
 
@@ -30,6 +31,7 @@ class App extends Component {
     return (
       <div className='body-for-sticky'>
         <Header></Header>
+        <HomePage_Popup></HomePage_Popup>
         <div className='homeBackground'>
           <Switch>
             <Route exact path={["/","/home"]} component={HomePage}/>

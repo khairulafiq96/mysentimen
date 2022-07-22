@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import FacebookLoginButton from './FacebookLoginButton'
 import {NavLink} from 'react-router-dom'
 import {connect} from 'react-redux';
+import HomePage_Popup from './HomePage_Popup';
 
 
 class HomePage extends Component {
