@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import Header_loggedInUser from './Header_loggedInUser'
 import {connect} from 'react-redux';
 import FacebookLoginButton from './FacebookLoginButton';
+import HomePage_Popup from './HomePage_Popup';
 
 class Header extends Component {
     render(){

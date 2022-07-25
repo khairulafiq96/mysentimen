@@ -702,6 +702,29 @@ textarea:focus{
   width: 40%;
 }
 
+/* Homepage Popup */
+.popup_container{
+  padding-top: 20px;
+  padding-left: 200px;
+  padding-bottom: 20px;
+
+  background-color: rgb(236, 250, 255);
+  width: 100%;
+  font-family: 'Raleway', sans-serif;
+  border-bottom: #a9e7fd 1px solid;
+}
+
+.popup_setFlex{
+  display: flex;
+}
+
+
+.popup_button{
+  margin-left: 10px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px;
+}
+
 
 
 
